@@ -8,7 +8,7 @@ public class GroundController : MonoBehaviour
     private Rigidbody rb;
     private float movementX;
     private float movementY;
-    private int turnSpeed = 5;
+    private int turnSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class GroundController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        Vector3 movement = new Vector3(movementY, 0.0f, -movementX);
         transform.Rotate(movement * turnSpeed * Time.deltaTime);
     }
 
